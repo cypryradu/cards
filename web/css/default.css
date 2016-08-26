@@ -1,0 +1,12 @@
+#page-wrapper {
+    padding: 2em;
+}
+
+.form-wrapper {
+    width: 50%;
+    margin: auto;
+}
+
+.form-wrapper input {
+    margin-bottom: 1em;
+}

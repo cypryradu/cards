@@ -1,0 +1,29 @@
+{% extends app.config.layout %}
+
+{% block pageTitle %}Card - List{% endblock %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Company</th>
+            <th>Website</th>
+        </tr>
+    </thead>
+    {% for card in cards %}
+    <tbody>
+        <tr>
+            <td><a href="{{ path('card_form', {'id': card.id})}}">{{ card.firstname }}</a></td>
+            <td>{{ card.lastname }}</td>
+            <td>{{ card.company }}</td>
+            <td>{{ card.website }}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
+<br>
+<a class="btn btn-default" href="{{ path('card_form')}}">Add new card</a>
+{% endblock %}

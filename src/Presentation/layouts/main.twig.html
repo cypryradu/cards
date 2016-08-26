@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block pageTitle %}Default title{% endblock %}</title>
+        <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/components/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="/css/default.css" />
+    </head>
+    <body>
+        <div id="page-wrapper">
+            {% for message in app.session.flashbag.get('success_message') %}
+              <div class="alert alert-success text-center"><strong>{{ message }}</strong></div>
+            {% endfor %}
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

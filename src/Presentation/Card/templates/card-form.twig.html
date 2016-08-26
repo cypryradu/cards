@@ -1,0 +1,34 @@
+{% extends app.config.layout %}
+
+{% block pageTitle %}Card - Form{% endblock %}
+
+{% block content %}
+<style type="text/css">
+    label {
+        display: block;
+    }
+</style>
+<fieldset class="form-wrapper">
+    <legend>Card details</legend>
+    <form action="{{ path('card_form', {'action': 'save', 'id': card.id})}}" method="post">
+        <label for="firstname">First Name:</label><input id="firstname" type="text" name="card[firstname]" value="{{ card.firstname }}" class="form-control">
+        <label for="lastname">Last Name:</label><input id="lastname" type="text" name="card[lastname]" value="{{ card.lastname }}" class="form-control">
+        <label for="email">Email:</label><input id="email" type="text" name="card[email]" value="{{ card.email }}"  class="form-control">
+        <label for="jobtitle">Job Title:</label><input id="jobtitle" type="text" name="card[jobtitle]" value="{{ card.jobtitle }}" class="form-control">
+        <label for="Website">Website:</label><input id="website" type="text" name="card[website]" value="{{ card.website }}" class="form-control">
+        <label for="company">Company:</label><input id="company" type="text" name="card[company]" value="{{ card.company }}" class="form-control">
+        <label for="country">Country:</label><input id="country" type="text" name="card[country]" value="{{ card.country }}" class="form-control">
+        <label for="county">County:</label><input id="county" type="text" name="card[county]" value="{{ card.county }}" class="form-control">
+        <label for="town">Town:</label><input id="town" type="text" name="card[town]" value="{{ card.town }}" class="form-control">
+
+        <br>
+        <br>
+
+        <input class="btn btn-default" type="submit" name="save_card" value="{{ button_value }}">
+        <a class="btn btn-link pull-right" href="{{ path('card_list') }}" >Cancel</a>
+        {% if card.id %}
+        <a class="btn btn-danger pull-right" href="{{ path('card_form', {'action': 'delete', 'id': card.id}) }}" >Delete</a>
+        {% endif %}
+    </form>
+</fieldset>
+{% endblock %}
