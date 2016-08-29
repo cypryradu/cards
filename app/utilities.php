@@ -67,11 +67,6 @@ function sanitizeVars(&$vars, $classNotToSanitize = '')
     array_walk_recursive($vars, "sanitizeValue", $classNotToSanitize);
 }
 
-function capitalize($str)
-{
-    return str_replace(' ', '', ucwords(str_replace('-', ' ', $str)));
-}
-
 function ifEmpty(&$var, $default = '')
 {
     if (empty($var)) {

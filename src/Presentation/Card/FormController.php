@@ -35,7 +35,6 @@ class FormController extends Controller
         }
 
         $this->model->updateCard($cardId, $cardData);
-
         return $this->app->redirect($this->cardListUrl);
     }
 
